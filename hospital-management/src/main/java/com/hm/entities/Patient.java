@@ -1,5 +1,7 @@
 package com.hm.entities;
 
+import org.springframework.stereotype.Component;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,12 +16,14 @@ import lombok.ToString;
 @Setter
 @Entity
 @ToString
+@Component
 @Table(name = "Patient")
 public class Patient {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	@Column(name="patient_id")
+	private String patientId;
+	
 	@Column(name="first_Name")
 	private String firstName;
 	
